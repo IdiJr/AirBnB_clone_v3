@@ -158,6 +158,8 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 Emmanuel Addo - [Github](https://github.com/emmanueladdo) / [Twitter](https://twitter.com/EmakStyle)
 
+Ali Baba Idi - [Github](https://github.com/IdiJr) / [Twitter](https://twitter.com/idialijnr)
+
 Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
