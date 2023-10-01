@@ -2,7 +2,7 @@
 """index page"""
 from api.v1.views import app_views
 from flask import jsonify
-from models import storage
+from models import *
 
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
@@ -14,7 +14,7 @@ def status():
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def get_stats():
     """Retrieves the number of objects"""
-    stat = {
+    stats = {
         "amenities": storage.count("Amenity"),
         "cities": storage.count("City"),
         "places": storage.count("Place"),
@@ -22,4 +22,4 @@ def get_stats():
         "states": storage.count("State"),
         "users": storage.count("User")
     }
-    return jsonify(stat)
+    return jsonify(stats)
