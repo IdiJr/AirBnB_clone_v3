@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""index page"""
+"""index.py page"""
 from api.v1.views import app_views
 from flask import jsonify
 from models import storage
@@ -23,3 +23,7 @@ def get_stats():
         "users": storage.count("User")
     }
     return jsonify(stats)
+
+
+if __name__ == "__main__":
+    pass
