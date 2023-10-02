@@ -15,7 +15,8 @@ def get_states():
     return jsonify(states)
 
 
-@app_views.route('/states/<string:state_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/states/<string:state_id>',
+                 methods=['GET'], strict_slashes=False)
 def get_state(state_id):
     """Retrieves a State object by ID"""
     state = storage.get(State, state_id)
@@ -25,8 +26,8 @@ def get_state(state_id):
 
 
 @app_views.route(
-        '/states/<string:state_id>', methods=['DELETE'],
-        strict_slashes=False
+    '/states/<string:state_id>', methods=['DELETE'],
+    strict_slashes=False
 )
 def delete_state(state_id):
     """Deletes a State object by ID"""
