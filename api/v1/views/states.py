@@ -10,7 +10,7 @@ from models.state import State
 def get_states():
     """Retrieves a list of all state objects"""
     states = []
-    for state in storage.all("State").values():
+    for state in storage.all(State).values():
         states.append(state.to_dict())
     return jsonify(states)
 
