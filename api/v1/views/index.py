@@ -12,14 +12,13 @@ def status():
 
 
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
-def get_stats():
-    """Retrieve the number of objects by type"""
-    stats = {
-        "amenities": storage.count("Amenity"),
-        "cities": storage.count("City"),
-        "places": storage.count("Place"),
-        "reviews": storage.count("Review"),
-        "states": storage.count("State"),
-        "users": storage.count("User")
-    }
-    return jsonify(stats)
+def stat():
+    """returns the number of each objects by type"""
+    return jsonify(
+        amenities=storage.count('Amenity'),
+        cities=storage.count('City'),
+        places=storage.count('Place'),
+        reviews=storage.count('Review'),
+        states=storage.count('State'),
+        users=storage.count('User')
+    )
