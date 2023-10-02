@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""index.py module page"""
+'''index.py module page'''
 from api.v1.views import app_views
 from flask import jsonify, request
 from models import storage
