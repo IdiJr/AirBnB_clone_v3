@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Contains the blueprint for the API-rest
+"""
 from flask import Blueprint
 
 
