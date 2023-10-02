@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """ View for State objects for the API """
 from flask import Flask, jsonify, request, abort
 from api.v1.views import app_views
