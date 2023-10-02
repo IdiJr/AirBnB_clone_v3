@@ -56,30 +56,23 @@ class DBStorage:
         Returns the obj based on the class name and its ID, or
         None if not found
         """
-        if cls not in classes.values():
-            return None
-
-        all_cls = models.storage.all(cls)
-        for value in all_cls.values():
-            if (value.id == id):
-                return value
-
+    
+    def get(self, cls, id):
+        """retrieves an object"""
+        all_objs = self.all(cls)
+        for obj in all_objs.values():
+            if obj.id == id:
+                return obj
         return None
 
     def count(self, cls=None):
-        """
-        count the number of obj in storage
-        """
-        all_cls = classes.values()
-
-        if not cls:
-            count = 0
-            for clas in all_cls:
-                count += len(models.storage.all(clas).values())
+        """count the number of objects in a storage"""
+        if cls:
+            total_count = len(self.all(cls).keys())
+            return total_count
         else:
-            count = len(models.storage.all(cls).values())
-
-        return count
+            total_count = len(self.all().keys())
+            return total_count
 
     def new(self, obj):
         """add the object to the current database session"""
