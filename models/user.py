@@ -28,11 +28,6 @@ class User(BaseModel, Base):
     def __init__(self, *args, **kwargs):
         """initializes user"""
         super().__init__(*args, **kwargs)
-        # Check if 'password' is in kwargs and hash it
-        if 'password' in kwargs:
-            self.password = hashlib.md5(
-                    kwargs['password'].encode()
-            ).hexdigest()
 
     def __setattr__(self, __name: str, __value) -> None:
         """ Sets an attribute for the user class """
