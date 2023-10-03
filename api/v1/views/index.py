@@ -27,3 +27,7 @@ def get_stats():
         for key, value in PLURALS.items():
             response[value] = storage.count(key)
         return jsonify(response)
+
+
+if __name__ == "__main__":
+    pass
