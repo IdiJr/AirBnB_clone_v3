@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """AirBnb flask APP"""
 from flask import Flask, jsonify
-"""from flask_cors import COR"""
 from models import storage
 import os
 from api.v1.views import app_views
+#from flask_cors import CORS
 
 
 app = Flask(__name__)
