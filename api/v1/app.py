@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 """AirBnb flask APP"""
-from flask import Flask, jsonify
+from flask import Flask, jsonify, Blueprint, make_response
 from models import storage
 import os
 from api.v1.views import app_views
+
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def closeStorage(error):
+def closeStorage(expception):
     """Method to close storage"""
     storage.close()
 
