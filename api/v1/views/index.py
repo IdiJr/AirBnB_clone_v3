@@ -5,28 +5,24 @@ from flask import jsonify, request
 from models import storage
 
 
-@app_views.route('/status', methods=['GET'])
+@app_views.route('/status', methods=['GET'], strict_slashes=False)
 def status():
     """returns a JSON string of the status in a 200 response"""
     return jsonify({"status": "OK"})
 
 
-@app_views.route('/stats', methods=['GET'])
+@app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def get_stats():
     """retrieves the number of each objects by type"""
-    if request.method == 'GET':
-        response = {}
-        PLURALS = {
-            "Amenity": "amenities",
-            "City": "cities",
-            "Place": "places",
-            "Review": "reviews",
-            "State": "states",
-            "User": "users"
+    stat = {
+        "amenities": storage.count('Amenity'),
+        "cities": storage.count('City'),
+        "places": storage.count('Place'),
+        "reviews": storage.count('Review'),
+        "states": storage.count('State'),
+        "users": storage.count('User')
         }
-        for key, value in PLURALS.items():
-            response[value] = storage.count(key)
-        return jsonify(response)
+    return jsonify(stat)
 
 
 if __name__ == "__main__":
